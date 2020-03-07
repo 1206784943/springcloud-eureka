@@ -1,0 +1,8 @@
+server:
+  port: 8082
+eureka:
+  instance:
+    appname: eureka-customer
+  client:
+    service-url:
+      defaultZone: http://localhost:8091/eureka/

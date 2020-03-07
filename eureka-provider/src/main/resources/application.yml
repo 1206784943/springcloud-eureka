@@ -1,0 +1,8 @@
+server:
+  port: 8081
+eureka:
+  instance:
+    appname: eureka-provider  #instance.appname:指明注册中的名字
+  client: #client（客户端）向server（服务器）注册服务的配置
+    service-url: #service-url.defaultZone:配置注册中心地址
+      defaultZone: http://localhost:8091/eureka/
