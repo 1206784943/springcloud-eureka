@@ -2,12 +2,12 @@ server:
   port: 8091
 eureka:
   instance:
-    hostname: localhost
+    hostname: localhost #服务注册中心实例的主机名
   server:
-    enableSelfPreservation: true
-    renewalPercentThreshold: 0.1
+    enableSelfPreservation: true #服务端开启自我保护模式。无论什么情况，服务端都会保持一定数量的服务。避免client与server的网络问题，而出现大量的服务被清除。
+    renewalPercentThreshold: 0.1 #在设置的时间范围类，期望与client续约的百分比。
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: false #实例是否在eureka服务器上注册自己的信息以供其他服务发现，默认为true
+    fetch-registry: false #此客户端是否获取eureka服务器注册表上的注册信息，默认为true
 service-url:
-  defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ #服务地址
