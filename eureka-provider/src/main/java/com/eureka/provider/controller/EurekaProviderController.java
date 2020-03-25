@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 //rest 风格控制器
 @RestController
-public class DemoController {
+public class EurekaProviderController {
     @RequestMapping("/getInfo")
     public String getDemoInfo() {
         return "this is a provider service";
