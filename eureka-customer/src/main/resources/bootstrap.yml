@@ -1,0 +1,7 @@
+eureka:
+  instance:
+    appname: eureka-customer
+  client:
+    service-url:
+      defaultZone: http://localhost:8091/eureka/
+    fetch-registry: true

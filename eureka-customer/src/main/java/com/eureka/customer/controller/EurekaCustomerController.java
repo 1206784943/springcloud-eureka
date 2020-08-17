@@ -1,5 +1,6 @@
 package com.eureka.customer.controller;
 
+import com.eureka.customer.feign.EurekaCustomerFeign;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.RequestEntity;
@@ -13,6 +14,8 @@ public class EurekaCustomerController {
 
     @Autowired
     private RestTemplate restTemplate;
+    @Autowired
+    private EurekaCustomerFeign eurekaCustomerFeign;
 
     @RequestMapping("/test1")
     public String getEurekaServiceInfo() {
@@ -46,4 +49,13 @@ public class EurekaCustomerController {
         return res;
     }
 
+    /**
+     * feign功能测试
+     * @return
+     */
+    @RequestMapping("/test4")
+    public String test4() {
+        String demoInfo = eurekaCustomerFeign.getDemoInfo();
+        return demoInfo;
+    }
 }
