@@ -17,6 +17,16 @@ public class EurekaCustomerController {
     @Autowired
     private EurekaCustomerFeign eurekaCustomerFeign;
 
+    /**
+     * feign功能测试
+     * @return
+     */
+    @RequestMapping("/test4")
+    public String test4() {
+        String demoInfo = eurekaCustomerFeign.getDemoInfo();
+        return demoInfo;
+    }
+
     @RequestMapping("/test1")
     public String getEurekaServiceInfo() {
         /**
@@ -49,13 +59,4 @@ public class EurekaCustomerController {
         return res;
     }
 
-    /**
-     * feign功能测试
-     * @return
-     */
-    @RequestMapping("/test4")
-    public String test4() {
-        String demoInfo = eurekaCustomerFeign.getDemoInfo();
-        return demoInfo;
-    }
 }

@@ -9,6 +9,7 @@ public class EurekaProviderController {
 
     @RequestMapping("/getInfo")
     public String getDemoInfo() {
+        int i = 1/0;
         return "this is a provider service";
     }
 
