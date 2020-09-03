@@ -5,3 +5,7 @@ eureka:
     service-url:
       defaultZone: http://localhost:8091/eureka/
     fetch-registry: true
+#必须配置，否则fallBack不生效
+feign:
+  hystrix:
+    enabled: true
