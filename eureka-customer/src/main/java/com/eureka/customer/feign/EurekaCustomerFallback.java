@@ -13,7 +13,7 @@ public class EurekaCustomerFallback implements FallbackFactory<EurekaCustomerFei
     private static final Logger logger = LoggerFactory.getLogger(EurekaCustomerFallback.class);
 
     @Override
-    public EurekaCustomerFeign create(Throwable throwable) {
+    public EurekaCustomerFeign create(final Throwable throwable) {
         return new EurekaCustomerFeign() {
             @Override
             public String getDemoInfo() {
