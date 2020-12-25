@@ -1,7 +1,7 @@
 eureka:
   instance:
     #服务注册到注册中心名称
-    appname: eureka-provider
+    appname: eureka-gateway
   client:
     service-url:
       #当前服务注册到eureka服务地址

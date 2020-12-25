@@ -17,9 +17,9 @@ public class EurekaCustomerFallback implements FallbackFactory<EurekaCustomerFei
         return new EurekaCustomerFeign() {
             @Override
             public String getDemoInfo() {
-                log.info("进入feignback------------------------>>>>>");
+                log.info("调用失败，进入feignback");
                 logger.error(throwable.getMessage());
-                return null;
+                return "调用失败，进入feignback";
             }
         };
     }

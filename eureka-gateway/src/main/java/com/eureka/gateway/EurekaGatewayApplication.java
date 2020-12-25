@@ -1,13 +1,13 @@
-package com.eureka.provider;
+package com.eureka.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class EurekaProviderApplication {
+public class EurekaGatewayApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(EurekaProviderApplication.class, args);
+        SpringApplication.run(EurekaGatewayApplication.class, args);
     }
 
 }
