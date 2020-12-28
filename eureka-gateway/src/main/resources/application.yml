@@ -2,8 +2,8 @@
 server:
   port: 8083
 
-spring:
-  profiles:
+#spring:
+#  profiles:
     # 指定配置
     # route_simple：简单尝试
     # route_stripPrefix：截取请求
@@ -12,14 +12,14 @@ spring:
     # route_hystrix：熔断
     # route_requestRateLimiter：限流
     # route_all：综合
-    active: route_simple
+#    active: route_all
 
 ---
 
 spring:
   # 配置文件名称，用来标识不同环境的配置。由 spring.profiles.active 的值来决定使用哪组配置。
   ## 简单尝试
-  profiles: route_simple
+#  profiles: route_all
   application:
     # 应用名称
     name: app-eureka-gateway
@@ -33,18 +33,31 @@ spring:
       # 路由（routes：路由，它由唯一标识（ID）、目标服务地址（uri）、一组断言（predicates）和一组过滤器组成（filters）。filters 不是必需参数。）
       routes:
         # 路由标识（id：标识，具有唯一性）   简单尝试
-        - id: route_simple
+        - id: route_customer
           # 目标服务地址（uri：地址，请求转发后的地址）
           uri: lb://app-eureka-customer
           # 路由条件（predicates：断言，匹配 HTTP 请求内容）
           predicates:
           ## 匹配 GET 请求
-          - Method=GET
+#          - Method=GET
           ## 转发地址格式为 uri/archive
           - Path=/customer/**
           filters:
           ## 截取路径位数
           - StripPrefix=1
+        # 路由标识（id：标识，具有唯一性）   简单尝试
+        - id: route_provider
+          # 目标服务地址（uri：地址，请求转发后的地址）
+          uri: lb://app-eureka-provider
+          # 路由条件（predicates：断言，匹配 HTTP 请求内容）
+          predicates:
+            ## 匹配 GET 请求
+#            - Method=GET
+            ## 转发地址格式为 uri/archive
+            - Path=/provider/**
+          filters:
+            ## 截取路径位数
+            - StripPrefix=1
 
 logging:
   level:
