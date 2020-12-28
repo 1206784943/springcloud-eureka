@@ -6,3 +6,7 @@ eureka:
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ # 注册中心地址
     disable-delta: true
+    #需要将我的服务注册到eureka上
+    register-with-eureka: true
+    #需要检索服务
+    fetch-registry: false
