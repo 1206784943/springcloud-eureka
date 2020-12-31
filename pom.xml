@@ -10,10 +10,10 @@
 
 	<!-- 工程名称和描述 -->
 	<name>spring-cloud-parent</name>
-	<description>Demo project for Spring Boot</description>
+	<description>父工程</description>
 
 	<!-- 打包方式 -->
-	<packaging>jar</packaging>
+	<packaging>pom</packaging>
 
 	<!-- 在 properties 下声明相应的版本信息，然后在 dependency 下引用的时候用 ${} 就可以引入该版本 jar 包了 -->
 	<properties>
