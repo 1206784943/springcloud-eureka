@@ -17,6 +17,13 @@ public class EurekaCustomerController {
     @Autowired
     private EurekaCustomerFeign eurekaCustomerFeign;
 
+
+
+    @RequestMapping("/test5")
+    public String test3() {
+        return "customer访问成功";
+    }
+
     /**
      * feign功能测试
      * @return
