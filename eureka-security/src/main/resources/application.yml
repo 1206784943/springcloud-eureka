@@ -3,6 +3,22 @@ server:
 spring:
   application:
     name: app-eureka-security
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///oauth2
+    username: root
+    password: root
+  main:
+    allow-bean-defintion-overriding: true #允许覆盖IOC内对象
+mybatis:
+  configuration:
+    #开启驼峰
+    map-underscore-to-camel-case: true
+    #日志打印sql
+  #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: mapper/*.xml
+  #  check-config-location: true
+  type-aliases-package: com.eureka.customer.**
 #  cloud:
 #    stream:
 #      kafka:
