@@ -42,7 +42,7 @@ public class OauthCustomerConfig extends ResourceServerConfigurerAdapter {
     }
 
     /**
-     * 指定不同请求方式访问资源所需要的权限
+     * 指定不同请求方式访问资源所需要的权限(固定配置)
      *
      * @param http
      * @throws Exception
