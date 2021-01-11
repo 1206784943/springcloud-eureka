@@ -48,11 +48,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     /**
      * AuthenticationManager 在oauth2认证服务中使用，提前放入IOC容器
      * oauth2授权码模式使用
+     *
      * @return
      * @throws Exception
      */
-    @Override
     @Bean
+    @Override
     public AuthenticationManager authenticationManager() throws Exception {
         return super.authenticationManager();
     }
