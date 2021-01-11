@@ -1,24 +1,29 @@
 server:
   port: 8084
+
 spring:
   application:
     name: app-eureka-security
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql:///oauth2
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/oauth2?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
     username: root
     password: root
   main:
     allow-bean-defintion-overriding: true #允许覆盖IOC内对象
+
 mybatis:
   configuration:
     #开启驼峰
     map-underscore-to-camel-case: true
     #日志打印sql
-  #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  # 实体类路径
+  type-aliases-package: com.eureka.security.domain
+  # 映射文件路径
   mapper-locations: mapper/*.xml
-  #  check-config-location: true
-  type-aliases-package: com.eureka.security.mapper
+
 #  cloud:
 #    stream:
 #      kafka:

@@ -7,7 +7,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 @Component
-@Slf4j
 public class EurekaCustomerFallback implements FallbackFactory<EurekaCustomerFeign> {
 
     private static final Logger logger = LoggerFactory.getLogger(EurekaCustomerFallback.class);
@@ -17,7 +16,6 @@ public class EurekaCustomerFallback implements FallbackFactory<EurekaCustomerFei
         return new EurekaCustomerFeign() {
             @Override
             public String getDemoInfo() {
-                log.info("调用失败，进入feignback");
                 logger.error(throwable.getMessage());
                 return "调用失败，进入feignback";
             }

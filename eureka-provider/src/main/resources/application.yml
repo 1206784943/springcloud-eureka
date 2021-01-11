@@ -4,8 +4,9 @@ spring:
   application:
     name: app-eureka-provider
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql:///oauth2
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/oauth2?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
     username: root
     password: root
   main:
