@@ -21,7 +21,7 @@ public class EurekaCustomerController {
 
     @RequestMapping("/test5")
     public String test3() {
-        return "customer访问成功";
+        return "this is a customer service";
     }
 
     /**

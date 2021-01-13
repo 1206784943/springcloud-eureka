@@ -1,10 +1,12 @@
-package com.eureka.customer.domain;
+package com.eureka.security.domain;
 
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 
 @Data
 public class SysRole implements GrantedAuthority {
+
+    private static final long serialVersionUID = 1L;
 
     private Integer id;
     private String roleName;
