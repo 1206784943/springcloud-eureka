@@ -1,6 +1,5 @@
 package com.eureka.customer.feign;
 
-import com.eureka.customer.config.FeignOAuthRequestInterceptor;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 

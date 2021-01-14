@@ -36,13 +36,6 @@ public class EurekaCustomerController {
 
     @RequestMapping("/test1")
     public String getEurekaServiceInfo() {
-        /**
-         * exchange(url,type,paras,resutType)
-         * url：请求地址
-         * type：请求类型 get,post
-         * paras：参数
-         * resutType：返回值类型
-         */
         String url = "http://localhost:8081/getInfo";
         HttpMethod type = HttpMethod.GET;
         RequestEntity<String> paras = null;
