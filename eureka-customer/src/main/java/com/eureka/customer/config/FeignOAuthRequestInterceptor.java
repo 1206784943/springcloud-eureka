@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationDetails;
-import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -30,15 +29,15 @@ public class FeignOAuthRequestInterceptor implements RequestInterceptor {
      */
     @Override
     public void apply(RequestTemplate requestTemplate) {
+        //方式一
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
         String token = request.getHeader("Authorization");
         requestTemplate.header("Authorization", token);
-
+        //方式二（不推荐），需要配置Hystrix的隔离策略是SEMAPHORE
 //        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 //        OAuth2AuthenticationDetails details = (OAuth2AuthenticationDetails) authentication.getDetails();
-//        requestTemplate.header("Authorization", details.getTokenValue());
-
+//        requestTemplate.header("Authorization", "Bearer " + details.getTokenValue());
     }
 
 }
