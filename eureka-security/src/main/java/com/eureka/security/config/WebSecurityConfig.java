@@ -41,6 +41,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                 .loginProcessingUrl("/login")
+                .and()
+                .logout()
                 .permitAll() //指定认证页面可以匿名页面
                 .and().csrf().disable(); //关闭跨站请求防护
     }

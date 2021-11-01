@@ -33,11 +33,11 @@ mybatis:
 
 ########### PowerJob-worker properties. ###########
 # Akka port, default is 27777
-powerjob:
-  worker:
-    akka-port: 27777
-    app-name: app-eureka-customer
-    server-address: 127.0.0.1:7700,127.0.0.1:7701
-    store-strategy: disk
-    max-result-length: 4096
-    max-appended-wf-context-length: 4096
+#powerjob:
+#  worker:
+#    akka-port: 27777
+#    app-name: app-eureka-customer
+#    server-address: 127.0.0.1:7700,127.0.0.1:7701
+#    store-strategy: disk
+#    max-result-length: 4096
+#    max-appended-wf-context-length: 4096
