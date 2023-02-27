@@ -5,11 +5,11 @@
 
 	<!-- 三坐标 -->
 	<groupId>com.springcloud.demo</groupId>
-	<artifactId>spring-cloud-eureka</artifactId>
+	<artifactId>springcloud-eureka</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<!-- 工程名称和描述 -->
-	<name>spring-cloud-eureka</name>
+	<name>springcloud-eureka</name>
 	<description>父工程</description>
 
 	<!-- 打包方式 -->
